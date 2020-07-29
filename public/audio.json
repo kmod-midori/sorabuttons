@@ -16,6 +16,30 @@
     }
   },
   {
+    "label": "我可是宇宙第一超级清楚美少女秘封UP主",
+    "src": {
+      "url": "https://www.bilibili.com/video/BV1DE411T7xm",
+      "start": "00:00:48",
+      "duration": "0:05.500"
+    }
+  },
+  {
+    "label": "狗狗~~~",
+    "src": {
+      "url": "https://www.bilibili.com/video/BV1DE411T7xm",
+      "start": "00:01:37.500",
+      "duration": "0:04.000"
+    }
+  },
+  {
+    "label": "姐姐大人最喜欢了",
+    "src": {
+      "url": "https://www.bilibili.com/video/BV1DE411T7xm",
+      "start": "00:02:43.000",
+      "duration": "0:01.500"
+    }
+  },
+  {
     "label": "我 来 了 （破音）",
     "src": {
       "url": "https://www.bilibili.com/video/BV1sC4y1b7Fk",
@@ -29,6 +53,22 @@
       "url": "https://www.bilibili.com/video/BV1sC4y1b7Fk",
       "start": "00:12.00",
       "duration": "0:02.000"
+    }
+  },
+  {
+    "label": "自我介绍（日文）",
+    "src": {
+      "url": "https://www.bilibili.com/video/BV1xE411V7FH",
+      "start": "00:00.00",
+      "duration": "0:05.000"
+    }
+  },
+  {
+    "label": "自我介绍（中文）",
+    "src": {
+      "url": "https://www.bilibili.com/video/BV1xE411V7FH",
+      "start": "00:05.500",
+      "duration": "0:03.000"
     }
   }
 ]

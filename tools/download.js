@@ -36,7 +36,7 @@ function downloadAudio(url, start, duration, dest) {
       .seekInput(start)
       .duration(duration)
       .audioBitrate("192k")
-      .audioFilters('loudnorm')
+      .audioFilters("loudnorm")
       .on("start", function(commandLine) {
         console.log("Spawned Ffmpeg with command: " + commandLine);
       })
