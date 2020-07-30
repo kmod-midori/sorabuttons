@@ -1,8 +1,12 @@
 const axios = require("axios").default;
+const YAML = require("yaml");
 const ffmpeg = require("fluent-ffmpeg");
 const fs = require("fs");
 const joinPath = require("path").join;
-const audioList = require("../public/audio.json");
+const audioList = YAML.parse(
+  fs.readFileSync(__dirname + "/../src/audio.yml").toString()
+);
+
 const { srcToFilename } = require("../src/utils");
 
 const REFERER = "https://www.bilibili.com/";
@@ -76,3 +80,8 @@ async function download(item) {
     await download(audioItem.src);
   }
 })();
+
+fs.writeFileSync(
+  __dirname + "/../public/audio.json",
+  JSON.stringify(audioList)
+);
