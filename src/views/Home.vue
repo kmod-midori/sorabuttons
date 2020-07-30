@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <div id="controls">
-      <div class="control"><button @click="pauseAll">全部停止</button></div>
+    <div class="bd dashed pd-1 radius-4">
+      <div class="control">
+        <button class="button button-red" @click="pauseAll">全部停止</button>
+      </div>
       <div class="control">
         <input v-model="repeat" type="checkbox" id="repeat" />
         <label for="repeat">洗脑循环</label>
@@ -11,8 +13,8 @@
         <label for="repeat">同时播放</label>
       </div>
     </div>
-    <div>
-      <h2>Sorabuttons</h2>
+    <div class="pd-1 pl-0">
+      <h2 class="pd-1 pl-0">Sorabuttons</h2>
       <iframe
         src="https://ghbtns.com/github-btn.html?user=chengyuhui&repo=sorabuttons&type=star&count=true"
         frameborder="0"
@@ -25,9 +27,19 @@
         <img src="https://img.shields.io/badge/Bilibili-402401719-blue" />
       </a>
     </div>
-
-    <div class="audio-btn-wrapper" v-for="(item, i) in audioItems" :key="i">
-      <button @click="play(item)">{{ item.label }}</button>
+    <div id="buttons">
+      <div class="audio-btn-wrapper" v-for="(item, i) in audioItems" :key="i">
+        <button class="button" @click="play(item)">{{ item.label }}</button>
+      </div>
+    </div>
+    <div class="card-box pd-1" v-if="lastPlayed !== null">
+      <h3 class="pb-1">{{ lastPlayed.label }}</h3>
+      <div>
+        <p>
+          来源：<a :href="lastPlayed.src.url">{{ lastPlayed.src.url }}</a>
+        </p>
+        <p>时间：{{ lastPlayed.src.start }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +55,7 @@ export default {
       audioItems: [],
       multi: false,
       repeat: false,
+      lastPlayed: null,
     };
   },
   mounted() {
@@ -56,6 +69,7 @@ export default {
     play(item) {
       let srcUrl = "/audio/" + srcToFilename(item.src);
       play(srcUrl);
+      this.lastPlayed = item;
     },
     updateConfig() {
       updateConfig(this.repeat, this.multi);
@@ -89,17 +103,12 @@ button {
 .audio-btn-wrapper {
   display: inline-block;
   margin-right: 1em;
-  button {
-    padding: 1em;
-  }
+  margin-bottom: 1em;
 }
 
 .control {
   display: inline-block;
   padding: 1em;
-  button {
-    padding: 0.5em;
-  }
   label {
     margin-left: 1em;
   }
