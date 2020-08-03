@@ -34,11 +34,14 @@
     </div>
     <div class="card-box pd-1" v-if="lastPlayed !== null">
       <h3 class="pb-1">{{ lastPlayed.label }}</h3>
-      <div>
+      <div v-if="lastPlayed.src.url">
         <p>
           来源：<a :href="lastPlayed.src.url">{{ lastPlayed.src.url }}</a>
         </p>
         <p>时间：{{ lastPlayed.src.start }}</p>
+      </div>
+      <div v-else>
+        <p>来源：{{ lastPlayed.src.comment }}</p>
       </div>
     </div>
   </div>

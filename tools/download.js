@@ -77,7 +77,9 @@ async function download(item) {
 
 (async function() {
   for (const audioItem of audioList) {
-    await download(audioItem.src);
+    if (audioItem.src.url) {
+      await download(audioItem.src);
+    }
   }
 })();
 
